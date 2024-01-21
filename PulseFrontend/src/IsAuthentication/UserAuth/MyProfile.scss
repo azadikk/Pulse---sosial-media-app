@@ -1,0 +1,1322 @@
+@import "../../globalstyle.scss";
+
+.auth-wrapper {
+  transition: 0.2s all;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+}
+
+.profile {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  overflow-y: scroll;
+  position: absolute;
+  left: 0;
+  .profile-main {
+    margin-top: 1.5rem;
+    width: 100%;
+    height: 400px;
+    @include flex;
+    
+    .wrapper {
+      width: 95%;
+      height: 100%;
+      display: flex;
+      box-shadow: 0px 0px 10px 0px rgba(29, 28, 28, 0.507);
+      align-items: center;
+      justify-content: center;
+      background-color: $backColor2;
+      .profile-wrapper {
+        width: 200px;
+        height: 200px;
+        background-color: transparent;
+        border-radius: 50%;
+        border-top: 3px dashed mediumslateblue;
+        border-bottom: 5px solid rgb(180, 87, 229);
+        @include flex;
+        position: relative;
+        img {
+          position: absolute;
+          width: 75%;
+          height: auto;
+          border-radius: 50%;
+        }
+      }
+      .profile-wrapper:hover {
+        background-color: $backColor3dark;
+        cursor: pointer;
+      }
+
+      .user-infos {
+        width: 750px;
+        height: 350px;
+        margin-left: 2.5rem;
+        margin-top: 5rem;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        .top-info {
+          width: 100%;
+          height: 100px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+          .username-and-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            min-width: 50%;
+            height: 50px;
+
+            .username {
+              color: #fff;
+              font-weight: bold;
+              font-size: 18px;
+              margin-right: 1rem;
+            }
+
+            #editProfile {
+              width: 120px;
+              height: 30px;
+              border-radius: 5px;
+              border: none;
+              outline: none;
+              background-color: #2a3145;
+              color: white;
+              cursor: pointer;
+              transition: 0.1s ease-out;
+            }
+            #editProfile:active {
+              transform: translateY(5px);
+            }
+            #editProfile:hover {
+              background-color: transparent;
+            }
+
+            #showArchive {
+              width: 100px;
+              height: 30px;
+              border-radius: 5px;
+              border: none;
+              outline: none;
+              background-color: #2a3145;
+              color: white;
+              cursor: pointer;
+              transition: 0.1s ease-out;
+            }
+            #showArchive:active {
+              transform: translateY(5px);
+            }
+            #showArchive:hover {
+              background-color: transparent;
+            }
+          }
+          .followers-counts {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            min-width: 95%;
+            height: 43px;
+            border-left: 5px solid rgba(45, 37, 90, 0.116);
+            background-color: #151822;
+            border-radius: 10px;
+            .posts,
+            .followers,
+            .following {
+              color: rgb(255, 255, 255);
+              font-size: 15px;
+              strong {
+                color: #cecece;
+                font-size: 17px;
+                margin-right: 0.5rem;
+              }
+            }
+          }
+        }
+
+        .biography {
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          flex-direction: column;
+          .about {
+            width: 100%;
+            background-color: $backColor3dark;
+            min-height: 60px;
+            @include flex;
+            flex-direction: column;
+            span {
+              user-select: none;
+              color: white;
+              font-weight: 600;
+              font-size: 13px;
+              background-color: transparent;
+              padding: 0.4rem 0.8rem;
+              border-bottom: 1px solid rgb(182, 169, 189);
+            }
+            p {
+              font-size: 13.5px;
+              padding: 1rem;
+              color: #cecece;
+              font-weight: 200;
+            }
+            #add-bio {
+              color: mediumslateblue;
+              font-size: 0.8rem;
+              cursor: pointer;
+              margin-left: 0.5rem;
+            }
+            #add-bio:hover {color: white;}
+          }
+
+          .special-env {
+            border-bottom: 3px solid rgba(182, 72, 255, 0.11);
+            border-radius: 5px;
+            @include flex;
+            .special-emoji {
+              width: 600px;
+              height: 60px;
+              @include flex;
+              #emoji {
+                width: 100%;
+                height: 60px;
+                background-color: #1e2437;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                span {
+                  color: white;
+                  font-size: 14px;
+                  #selectEmoji {
+                    color: mediumslateblue;
+                    background-color: transparent;
+                    padding: 0.1rem 1rem;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: 0.1s ease-out;
+                  }
+                  #selectEmoji:hover {
+                    background-color: #2a3145;
+                  }
+                }
+                .emojies {
+                  user-select: none;
+                  width: 100%;
+                  height: 100%;
+                  #emoji {
+                    font-size: 2rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+  }
+
+  .contents-main {
+    margin-top: 5rem;
+    width: 100%;
+    min-height: 25rem;
+    @include flex;
+    .contents {
+      width: 85%;
+      min-height: 25rem;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      .titles {
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 45px;
+        border-bottom: 1px solid #151822;
+        .all-section,
+        .images-section,
+        .videos-section,
+        .texts-section {
+          user-select: none;
+          margin-bottom: 0.8rem;
+          width: 135px;
+          height: 35px;
+          background-color: #2a3145;
+          border-radius: 7px;
+          cursor: pointer;
+          color: white;
+          transition: 0.1s ease-out;
+          @include flex;
+          span {
+            margin-left: 0.5rem;
+            font-size: 14px;
+          }
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+
+      .shares {
+        width: 100%;
+        min-height: 25rem;
+
+        .category-images {
+          width: 100%;
+          min-height: 25rem;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 3rem;
+          .box {
+            width: calc(30% - 0.5rem);
+            height: 350px;
+            background-color: #151822;
+            border-radius: 3px;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            @include flex;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            img {
+              width: 100%;
+              height: auto;
+              object-fit: contain;
+              border-radius: 3px;
+            }
+          }
+          .box:hover {
+            border: 1px solid #cecece40 !important;
+          }
+          .box:active {
+            transform: translateY(3px);
+          }
+        }
+
+        .category-videos {
+          width: 100%;
+          min-height: 25rem;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 3rem;
+          .box {
+            width: calc(30% - 0.5rem);
+            height: 350px;
+            background-color: #151822;
+            border-radius: 3px;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            @include flex;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            video {
+              width: 100%;
+              height: 90%;
+              object-fit: cover;
+              border-radius: 3px;
+            }
+          }
+          .box:hover {
+            border: 1px solid #cecece40 !important;
+          }
+          .box:active {
+            transform: translateY(3px);
+          }
+        }
+
+        .category-texts {
+          width: 100%;
+          min-height: 25rem;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 3rem;
+          .box {
+            width: calc(30% - 0.5rem);
+            height: 350px;
+            background-color: #151822;
+            border-radius: 3px;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            @include flex;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            p {
+              font-size: 16px;
+              padding: 2rem;
+              color: white;
+            }
+          }
+          .box:hover {
+            border: 1px solid #cecece40 !important;
+          }
+          .box:active {
+            transform: translateY(3px);
+          }
+        }
+      }
+    }
+  }
+}
+
+.edit-profile-wrapper {
+  transition: 0.2s all;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+
+  .cropper-modal {
+    width: 600px;
+    height: 400px;
+    background-color: #181c28;
+    box-shadow: 0px 0px 4px 0px rgb(255, 255, 255, 0.2);
+    z-index: 10000;
+    position: fixed;
+    top: 14%;
+    left: 27.5%;
+    border-radius: 10px;
+    @include flex;
+    flex-direction: column;
+
+    .top-title {
+      border-radius: 10px;
+      width: 100%;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $backColor3dark;
+      span {
+        color: white;
+        font-size: 14px;
+        margin-left: 1.5rem;
+      }
+      #photoedit-icon {
+        color: white;
+        margin-right: 1rem;
+        font-size: 1.5rem;
+      }
+    }
+
+    .cropper {
+      width: 100%;
+      height: 73%;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      .settings {
+        width: 200px;
+        height: 100%;
+        @include flex;
+        flex-direction: column;
+        .setting-input {
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          flex-direction: column;
+          label {
+            color: white;
+            font-size: 13px;
+            letter-spacing: -0.5px;
+          }
+          input[type="range"] {
+            width: 200px;
+            height: 30px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .exit-or-ok {
+      border-radius: 10px;
+      width: 100%;
+      height: 50px;
+      background-color: $backColor3dark;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      .exit {
+        border-radius: 10px;
+        width: 22%;
+        height: 75%;
+        background-color: $redBackColor;
+        @include flex;
+        transition: 0.1s ease-out;
+        button {
+          cursor: pointer;
+          width: 100%;
+          height: 100%;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          color: white;
+          font-weight: 600;
+        }
+      }
+      .exit:hover {
+        background-color: $backColor2;
+      }
+      .exit:active {
+        transform: translateY(2px);
+      }
+      .ok {
+        border-radius: 10px;
+        width: 22%;
+        height: 75%;
+        background-color: $greenBackColor;
+        @include flex;
+        transition: 0.1s ease-out;
+        button {
+          cursor: pointer;
+          width: 100%;
+          height: 100%;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          color: white;
+          font-weight: 600;
+        }
+      }
+      .ok:hover {
+        background-color: $backColor2;
+      }
+      .ok:active {
+        transform: translateY(2px);
+      }
+    }
+  }
+
+  .edit-profile {
+    gap: 40px;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    overflow-y: scroll;
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    .top-username-profile {
+      border-bottom: 1px solid #cecece10;
+      margin-top: 3rem;
+      width: 75%;
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      #backToProfile {
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: 0.1s ease-out;
+      }
+      #backToProfile:hover {
+        color: #4f639b;
+        transform: scale(1.1);
+      }
+
+      .profile-wrapper {
+        margin-left: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 200px;
+        height: 100%;
+        .profile {
+          position: relative;
+          @include flex;
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            position: absolute;
+          }
+        }
+
+        .username {
+          color: white;
+          font-weight: 400;
+          font-size: 13.5px;
+          margin-top: 0.5rem;
+        }
+      }
+
+      #change-profile {
+        width: 100px;
+        margin-right: 2rem;
+        height: 30px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        background-color: #2a3145;
+        color: white;
+        cursor: pointer;
+        transition: 0.1s ease-out;
+      }
+      #change-profile:active {
+        transform: translateY(5px);
+      }
+      #change-profile:hover {
+        background-color: transparent;
+      }
+    }
+
+    .main-informations {
+      width: 70%;
+      min-height: 26rem;
+      background-color: #181c28;
+      border-radius: 5px;
+      @include flex;
+      flex-direction: column;
+      .title {
+        width: 100%;
+        height: 60px;
+        @include flex;
+        span {
+          color: white;
+          font-size: 15px;
+          font-weight: 500;
+        }
+      }
+      .input-fields {
+        width: 80%;
+        height: auto;
+        position: relative;
+        input {
+          width: 100%;
+          height: 40px;
+          margin-top: 0.8rem;
+          border-radius: 16px;
+          border: none;
+          background-color: #1e2437;
+          outline: none;
+          box-shadow: 0px 0px 2px 0px #cecece;
+          color: white;
+          padding-left: 5.5rem;
+          padding-right: 6.8rem;
+        }
+        label {
+          position: absolute;
+          left: 1rem;
+          top: 1.2rem;
+          font-weight: 600;
+          color: rgb(95, 108, 163);
+          letter-spacing: -1px;
+          user-select: none;
+        }
+        #change {
+          width: 70px;
+          margin-right: 2rem;
+          height: 22px;
+          border-radius: 5px;
+          border: none;
+          font-size: 12px;
+          outline: none;
+          background-color: #2a3145;
+          color: white;
+          position: absolute;
+          right: 0;
+          top: 1.3rem;
+          cursor: pointer;
+          transition: 0.1s ease-out;
+        }
+        #change:active {
+          transform: translateY(5px);
+        }
+        #change:hover {
+          background-color: transparent;
+        }
+      }
+
+      .help {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        section {
+          padding: 0.2rem;
+          transition: 0.1s ease-out;
+          cursor: pointer;
+          margin-right: 2rem;
+          @include flex;
+          span {
+            margin-top: 0.1rem;
+            color: white;
+            font-size: 13.5px;
+            font-weight: 500;
+          }
+          img {
+            margin-left: 0.5rem;
+          }
+        }
+        section:hover {
+          border: 2px dashed #4f639b;
+        }
+      }
+    }
+
+    .about {
+      width: 70%;
+      min-height: 170px;
+      background-color: #181c28;
+      margin-bottom: 1.5rem;
+      border-radius: 5px;
+
+      #about-textarea {
+        margin-left: 2rem;
+        margin-top: 0.5rem;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        background-color: $backColor3dark;
+        resize: none;
+        color: white;
+        font-size: 14px;
+        padding: 1rem;
+      }
+      #about-textarea:focus {
+        border: 2px solid #2a3145;
+      }
+
+      .title {
+        user-select: none;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        #editIcon {
+          color: white;
+          font-size: 17px;
+          margin-right: 1.5rem;
+          cursor: pointer;
+          transition: 0.1s ease-out;
+        }
+        #editIcon:hover {
+          transform: scale(1.1);
+        }
+        #editIcon:active {
+          transform: translateX(2px);
+        }
+        span {
+          color: white;
+          font-size: 13px;
+          font-weight: 500;
+          margin-left: 1.2rem;
+        }
+
+        .spec2 {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+          width: 400px;
+          height: 100%;
+        }
+        #infoIcon {
+          color: gold;
+          font-size: 13px;
+          position: relative;
+          left: 1rem;
+        }
+        #spec {
+          font-size: 11.3px;
+          padding-top: 0.2rem;
+          color: #cecece71;
+          font-weight: 400;
+        }
+        .empty-is-bio {
+          transition: 0.2s ease-out;
+          color: rgb(100, 95, 95);
+          cursor: auto !important;
+        }
+        .empty-is-bio:hover {font-size: 14px;}
+
+        #no-bio-yet {
+          cursor: pointer;
+        }
+        #no-bio-yet:hover {color: rgb(224, 108, 108);}
+        
+      }
+
+      p {
+        padding: 1rem;
+        color: #cecece;
+        font-size: 13px;
+      }
+
+     
+      .icons {
+        width: 150px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        #checkIcon {
+          @include animModal();
+          color: rgb(121, 255, 121);
+          font-size: 1.5rem;
+          cursor: pointer;
+          transition: 0.1s ease-out;
+        }
+        #uncheckIcon {
+          @include animModal();
+          color: #cecece;
+          font-size: 1.5rem;
+          cursor: pointer;
+          transition: 0.1s ease-out;
+        }
+        #checkIcon:hover {
+          transform: scale(1.1);
+        }
+        #uncheckIcon:hover {
+          transform: scale(1.1);
+        }
+        span {
+          font-size: 12px;
+          margin-left: -1rem;
+        }
+      }
+    }
+    .about-changed {
+      width: 70%;
+      height: auto;
+      background-color: $backColor3dark;
+    
+      .about-changed2 {
+        width: 100%;
+        height: auto;
+        @include flex;
+        flex-direction: column;
+    
+        .about-changed-title {
+          width: 100%;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+    
+          #about-changed-edit-icon {
+            cursor: pointer;
+            color: white;
+            font-size: 17px;
+            margin-right: 1.5rem;
+          }
+    
+          span {
+            color: white;
+            font-size: 15px;
+            font-weight: 500;
+            margin-left: 1.1rem;
+          }
+        }
+    
+        .bio {
+          width: 100%;
+          max-height: 100%;
+          p {
+            margin: 1rem;
+            word-wrap: break-word;
+            color: #c3c3c3;
+          }
+        }
+      }
+    }
+    
+
+    .specialemoji,
+    .specialtext {
+      width: 55%;
+      min-height: 130px;
+      background-color: #151822;
+      margin-bottom: 1.5rem;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      .title {
+        user-select: none;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        #editIcon {
+          cursor: pointer;
+          color: white;
+          font-size: 17px;
+          margin-right: 1.5rem;
+        }
+        span {
+          color: white;
+          font-size: 15px;
+          font-weight: 500;
+          margin-left: 1.1rem;
+        }
+      }
+
+      .main {
+        user-select: none;
+        width: 100%;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        img {
+          margin-left: 1.5rem;
+        }
+        #emoji {
+          font-size: 3.5rem;
+          margin-right: 3rem;
+        }
+
+        #text {
+          font-size: 3rem;
+          margin-right: 3rem;
+          color: orchid;
+          font-weight: bold;
+        }
+
+        .select-your-emoji {
+          width: 250px;
+          height: 90%;
+          @include flex;
+          span {
+            user-select: none;
+            background-color: $backColor4light;
+            padding: 0.5rem 1.5rem;
+            border-radius: 5px;
+            color: white;
+            font-size: 15px;
+            margin-bottom: 1.5rem;
+            animation: colorAnim 2.8s ease-out forwards normal;
+            @keyframes colorAnim {
+              0% {
+                color: rgb(199, 87, 87);
+                background-color: rgb(58, 48, 116);
+              }
+              5% {
+                color: rgb(98, 73, 241);
+              }
+              10% {
+                color: rgb(28, 228, 161);
+              }
+              15% {
+                color: rgb(240, 60, 240);
+              }
+              20% {
+                color: rgb(218, 32, 218);
+              }
+              30% {
+                color: rgb(255, 163, 199);
+              }
+              50% {
+                color: rgb(204, 91, 108);
+              }
+              60% {
+                color: rgb(248, 236, 68);
+              }
+              66% {
+                color: rgb(255, 178, 91);
+              }
+              70% {
+                color: rgb(153, 58, 72);
+              }
+              80% {
+                color: rgb(218, 53, 240);
+              }
+              90% {
+                color: rgb(192, 82, 243);
+              }
+              100% {
+                color: rgb(255, 255, 255);
+              }
+            }
+            cursor: pointer;
+          }
+          span:hover {
+            background-color: transparent;
+          }
+          span:active {
+            transform: translateY(1px);
+          }
+        }
+        #not-spec-emoji {
+          color: white;
+          font-size: 14px;
+          margin-right: 3rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+      .main2 {
+        @include flex;
+        img {
+          margin-right: 12rem;
+        }
+        .givin-emojies {
+          @include flex;
+          #emoji {
+            font-size: 3rem;
+          }
+          #emoji:hover {
+            animation: emojiAnim 1s ease-out forwards infinite;
+            @keyframes emojiAnim {
+              0% {
+                transform: rotate(10deg);
+                border: 1px dashed mediumslateblue;
+              }
+              10% {
+                transform: rotate(20deg);
+                border: 1px dashed orchid;
+              }
+              20% {
+                transform: rotate(10deg);
+                border: 1px dashed cyan;
+              }
+              30% {
+                transform: rotate(10deg);
+                border: 1px dashed chocolate;
+              }
+              40% {
+                transform: rotate(20deg);
+                border: 1px dashed rgb(185, 65, 255);
+              }
+              50% {
+                transform: rotate(20deg);
+                border: 1px dashed rgb(218, 53, 240);
+              }
+              60% {
+                transform: rotate(20deg);
+                border: 1px dashed forestgreen;
+              }
+              70% {
+                transform: rotate(20deg);
+                border: 1px dashed rgb(105, 226, 105);
+              }
+              80% {
+                transform: rotate(20deg);
+                border: 1px dashed blueviolet;
+              }
+              90% {
+                transform: rotate(20deg);
+                border: 1px dashed rgb(153, 58, 72);
+              }
+              100% {
+                transform: rotate(20deg);
+                border: 1px dashed mediumslateblue;
+              }
+            }
+          }
+        }
+      }
+
+      .spec {
+        width: 300px;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        #spec2 {
+          font-size: 11.3px;
+          color: rgba(206, 206, 206, 0.4431372549);
+          font-weight: 400;
+        }
+        #infoIcon {
+          color: gold;
+          font-size: 12px;
+          position: relative;
+          left: 1rem;
+        }
+      }
+    }
+
+    .save-changes {
+      width: 100%;
+      min-height: 100px;
+      border-top: 1px solid #151822;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      button {
+        margin-right: 2rem;
+        width: 150px;
+        height: 33px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        color: black;
+        cursor: pointer;
+        font-weight: 500;
+      }
+      button:active {
+        transform: translateY(1px);
+      }
+      #ok {
+        background-color: rgb(105, 226, 105);
+      }
+      #discard {
+        background-color: #cecece;
+      }
+    }
+
+    #loadingAnimButton {
+      background-color: rgb(29, 70, 42);
+    }
+
+    //special emoji modal
+    .special-emoji-modal {
+      user-select: none;
+      position: fixed;
+      top: 10%;
+      left: 26.5rem;
+      width: 40%;
+      height: 30rem;
+      background-color: $backColor3dark;
+      border-radius: 10px;
+      z-index: 1000020;
+      @include flex;
+      flex-direction: column;
+      .title {
+        width: 100%;
+        height: 35px;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        padding-bottom: 1rem;
+        span {
+          color: white;
+          font-size: 14px;
+          padding-right: 1rem;
+        }
+
+        .selected-emoji {
+          width: 200px;
+          height: 65px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .emojies {
+            margin: 0.5rem;
+            span {
+              animation: opaAnim 0.7s ease-out forwards normal;
+              border-left: 2px solid mediumorchid;
+              border-right: 2px solid mediumslateblue;
+              border-radius: 50px;
+              padding: 0.3rem;
+              font-size: 2rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              #closeEmoji {
+                cursor: pointer;
+                font-size: 1.3rem;
+              }
+              #closeEmoji:hover {
+                color: $redBackColor;
+              }
+              @keyframes opaAnim {
+                from {
+                  opacity: 0;
+                }
+                to {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .emojies {
+        width: 100%;
+        height: 70% !important;
+        overflow-y: auto;
+        overflow-x: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        .emoji-lists {
+          margin-top: 1.5rem !important;
+          margin-left: 6.8rem !important;
+          width: calc(90% - 10.5rem);
+          display: flex;
+          background-color: #191f3046;
+          margin: 0.25rem;
+          border-radius: 50px;
+          transition: 0.1s ease-out;
+          @include flex;
+          span {
+            width: 100%;
+            text-align: center;
+            font-size: 2rem;
+            transition: 0.1s ease-out;
+            cursor: pointer;
+          }
+
+          #name {
+            color: white;
+            font-size: 15px;
+          }
+        }
+        //if selected emoji added the class
+        .selected {
+          @include animModal();
+          width: 70%;
+          text-align: center;
+          font-size: 2rem;
+          transition: 0.1s ease-out;
+          border-radius: 50px;
+          cursor: pointer;
+          background-color: rgb(88, 196, 88);
+        }
+        .selected:hover {
+          background-color: rgb(88, 196, 88) !important;
+        }
+
+        .emoji-lists:hover {
+          background-color: #cecece;
+          span {
+            transform: rotate(65deg);
+          }
+          #name {
+            transform: none !important;
+          }
+        }
+      }
+
+      .bottom-area {
+        width: 100%;
+        height: 50px;
+        background-color: $backColor3dark;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        button {
+          margin-top: 2rem;
+          width: 150px;
+          height: 30px;
+          border-radius: 7px;
+          border: none;
+          outline: none;
+          font-weight: 600;
+          transition: 0.1s ease-out;
+          cursor: pointer;
+        }
+        #ok {
+          color: rgb(92, 247, 92);
+          background-color: $buttonBackColor;
+        }
+        #no {
+          color: rgb(228, 108, 108);
+          background-color: $buttonBackColor;
+        }
+        button:hover {
+          background-color: transparent !important;
+        }
+      }
+    }
+  }
+  #suremsg-active {
+    opacity: 50%;
+  }
+}
+
+
+.empty-is-biography {
+  user-select: none;
+  @include opacityAnimModal();
+  width: 500px;
+  border-radius: 5px;
+  height: 250px;
+  position: fixed;
+  top: 25.5%;
+  left: 32%;
+  z-index: 100000;
+  background-color: $backColor3dark;
+  @include flex;
+  flex-direction: column;
+  .top-title {
+    width: 100%;
+    height: 50px;
+    @include flex;
+    color: white;
+    font-size: 14px;
+    border-bottom: 1px solid #cecece30;
+  }
+  .content {
+    width: 100%;
+    height: 87%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    span {
+      margin-top: 2rem;
+      color: #fff;
+      padding: 0.1rem 2rem;
+      border-radius: 3px;
+      background-color: $backColor4light;
+    }
+
+    .buttons {
+      width: 100%;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      button {
+        margin-top: 2rem;
+        width: 140px;
+        height: 33px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        background-color: $buttonBackColor;
+        color: white;
+        font-size: 0.8rem;
+        transition: 0.1s ease-out;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      button:hover {color: black; background-color: white;}
+    }
+
+  
+  }
+
+}

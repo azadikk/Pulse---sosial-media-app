@@ -1,0 +1,523 @@
+@import "../globalstyle.scss";
+//main container
+.main-container {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  overflow-y: scroll;
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  .share-post-area {
+    width: 100%;
+    height: 200px;
+    margin-top: 3rem;
+    @include flex;
+    .share-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 80%;
+      height: 170px;
+      box-shadow: 0px 0px 5px 0px rgba(64, 56, 112, 0.384);
+      border-left: 10px solid rgb(64, 56, 112);
+      border-bottom: 1px solid rgb(66, 47, 177);
+      background-color: #1c2129;
+      border-radius: 8px;
+      .share {
+        width: auto;
+        height: auto;
+        @include flex;
+        .share-post-input {
+          transition: 0.1s ease-out;
+          border-radius: 10px;
+          resize: none;
+          border: 1px solid #303030;
+          outline: none;
+          padding: 1rem;
+          cursor: pointer;
+          color: black;
+          font-weight: 500;
+          font-size: 13px;
+        }
+        .share-post-input:hover {
+          background-color: #c2c2c2;
+          border: 1px solid white;
+        }
+        img {
+          border-radius: 50%;
+          border: 1px solid white;
+          margin-right: 20px;
+          cursor: pointer;
+        }
+        img:hover {
+          border: 2px solid white;
+        }
+      }
+
+      .share-content-bottom {
+        width: 100%;
+        height: 50px;
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        .photo,
+        .video,
+        .emoji {
+          @include flex;
+          width: 120px;
+          height: 35px;
+          border-radius: 5px;
+          #img-icon {
+            color: rgb(99, 236, 99);
+            font-size: 25px;
+          }
+          #video-icon {
+            color: rgb(59, 182, 253);
+            font-size: 25px;
+          }
+          #emoji-icon {
+            color: rgb(221, 115, 198);
+            font-size: 25px;
+          }
+          span {
+            margin-left: 0.3rem;
+            color: white;
+          }
+        }
+        .photo:hover {
+          cursor: pointer;
+          background: rgb(255, 255, 255);
+          background: linear-gradient(
+            333deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(105, 32, 93, 1) 0%,
+            rgba(82, 23, 171, 1) 96%
+          );
+        }
+        .video:hover {
+          cursor: pointer;
+          background: rgb(255, 255, 255);
+          background: linear-gradient(
+            333deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(105, 32, 93, 1) 0%,
+            rgba(82, 23, 171, 1) 96%
+          );
+        }
+        .emoji:hover {
+          cursor: pointer;
+          background: rgb(255, 255, 255);
+          background: linear-gradient(
+            333deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(105, 32, 93, 1) 0%,
+            rgba(82, 23, 171, 1) 96%
+          );
+        }
+      }
+    }
+  }
+
+  .post-area {
+    position: relative;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+    width: 50rem;
+    min-height: 35rem;
+    border-radius: 10px;
+    @include flex;
+    border: 1px solid rgba(255, 255, 255, 0.151);
+    flex-direction: column;
+    .post-top {
+      user-select: none;
+      width: 100%;
+      height: 55px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .user-and-time {
+        width:70%;
+        height: 100%;
+        @include flex;
+        .image-provider {
+          cursor: pointer;
+          margin-right: 1rem;
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          background-color: #303030;
+          position: relative;
+          transition: 0.1s ease-out;
+          img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+          }
+        }
+        .image-provider:hover {border: 1px solid white;}
+        .username {
+          color: white;
+          font-weight: 600;
+          font-size: 14.5px;
+          cursor: pointer;
+        }
+        .username:hover {text-decoration-line: underline;}
+        .time {
+          cursor: help;
+          color: #cecece;
+          font-weight: 400;
+          font-size: 12.6px;
+          margin-left: 1rem;
+          border-bottom: 1px solid white;
+        }
+        .special {
+          color: rgba(206, 206, 206, 0.4392156863);
+          font-size: 13.5px;
+          padding-top: 0.1rem;
+          margin-left: 0.8rem;
+        }
+      }
+
+      .icon-more {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 100%;
+        .more {
+          color: white;
+          font-size: 1.7rem;
+          cursor: pointer;
+          transition: 0.1s ease-out;
+        }
+        .more:hover {color: mediumslateblue; transform: scale(1.2);}
+      }
+
+
+    }
+
+    .content {
+      user-select: none;
+      width: 80%;
+      min-height: 350px;
+      background-color: #ffffff0c;
+      border-radius: 10px;
+      @include flex;
+      position: relative;
+      img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .like-and-comment-icons {
+      user-select: none;
+      width: 80%;
+      height: 90px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      .icons {
+        user-select: none;
+        width: 160px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;     
+        margin-bottom: 0.5rem; 
+        margin-top: 0.5rem; 
+        .like {
+          font-size: 1.7rem;
+          color: white;
+          cursor: pointer;
+          transition: 0.1s all;
+        }  
+        .like:hover {transform: scale(1.1);}
+        .unlikeicon {
+          color: rgb(255, 60, 60);
+          font-size: 2rem;
+          cursor: pointer;
+          transition: 0.1s all;
+          animation: unliked 0.3s ease-out forwards normal;
+          @keyframes unliked {
+            from{transform: scale(1.5);}
+            to{transform: scale(1.0);}
+          }
+
+        }
+        .unlikeicon:hover {color: rgb(165, 59, 59);}
+        .unlikeicon:active {color: rgb(36, 28, 28);}
+        .comment {
+          margin-left: 1.5rem;
+          font-size: 1.7rem;
+          color: white;
+          cursor: pointer;
+          transition: 0.1s all;
+        }  
+        .comment:hover {transform: scale(1.1);}
+      }
+
+      .like-counts {
+        width: 160px;
+        height: 30px;
+        border-radius: 16px;
+        background-color: #ffffff0c;
+        @include flex;
+        span {
+          color: #cecece;
+          font-size: 12.5px;
+        }
+        .likecountIcon {
+          margin-right: 0.7rem;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .bottom-area {
+      width: 80%;
+      min-height: 100px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      .username {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        span {
+          color: white;
+          font-size: 14.5px;
+          font-weight: bold;
+          @include flex;
+          margin-left: 0.5rem;
+          .special {
+            color: #cecece70;
+            font-size: 13.5px;
+            padding-top: 0.1rem;
+          }
+        }
+      }
+
+      .description {
+        margin-bottom: 1rem;
+        width: 100%;
+        height: auto;
+        background-color: #3640ce15;
+        p {
+          color: #cecece;
+          font-size: 13.3px;
+          text-align: start;
+          padding: 0.7rem;
+        }
+
+        .formore {
+          font-size: 12px;
+          border: none;
+          outline: none;
+          background-color: #ffffff0c;
+          color: mediumslateblue;
+          border-radius: 4px;
+          padding: 2px 10px;
+          cursor: pointer;
+          transition: 0.1s ease-out;
+        }
+        .formore:hover {
+          background-color: transparent;
+        }
+        .formore:active { transform: translateY(2px); }
+      }
+
+      .comments {
+        width: 100%;
+        min-height: 240px;
+        @include flex;
+        flex-direction: column;
+        .commit-count-and-share-input {
+          margin-bottom: 0.5rem;
+          width: 100%;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .counts-com {
+            width: 160px;
+            height: 30px;
+            border-radius: 16px;
+            background-color: rgba(255, 255, 255, 0.0470588235);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .commenticon {color: white; margin-right: 0.7rem; font-size: 14px;}
+            span {
+              color: #cecece;
+              font-size: 12.5px;
+            }
+          }
+
+          .input-field {
+            width: 80%;
+            height: 85%;
+            @include flex;
+            position: relative;
+            input[type='text']{
+              position: relative;
+              width: 85%;
+              height: 85%;
+              border: none;
+              outline: none;
+              border-radius: 10px;
+              background-color: #242A38;
+              color: white;
+              border: 1px solid #cecece70;
+              padding-left: 3rem;
+              cursor: pointer;
+            }
+          
+            input[type='text']:hover {
+              background-color: #1f232b;
+            }
+            .inputicon {
+              position: absolute;
+              left: 3rem;
+              z-index: 1;
+              color: white;
+              font-size: 1.2rem;
+            }
+          }
+        }
+
+        .comment-preview {
+          width: 100%;
+          min-height: 90px;
+          border-radius: 20px;
+          border: 2px solid #3640ce15;
+          margin-bottom: 0.5rem;
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          flex-direction: column;
+          .user-who-commented {
+            margin-top: 1rem;
+            width: 500px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            .image-provider {
+              margin-left: 0.7rem;
+              width: 30px;
+              height: 30px;
+              position: relative;
+              @include flex;
+              border-radius: 50%;
+              background-color: #3640ce15;
+              border: 1px dashed white;
+              img {
+                position: absolute;
+                inset: 0;
+                border-radius: 50%;
+                width: 100%;
+                height: 100%;
+              }
+            }
+
+            .user-name {
+              margin-left: 0.7rem;
+              @include flex;
+              #special {
+                background-color: transparent !important;
+                color: rgba(206, 206, 206, 0.4392156863);
+                font-size: 12.5px;
+              }
+              span {
+                background-color: #303030;
+                border-radius: 2px;
+                padding: 1px 3px;
+                color: white;
+                margin-right: 0.5rem;
+                font-size: 13px;
+                font-weight: normal;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+            }
+          }
+
+          .comment-content {
+            margin-left: 3.6rem;
+            width: 80%;
+            min-height: 36px;
+            background-color: transparent;
+            text-align: start;
+            p {
+              padding-bottom: 1rem;
+              font-size: 13px;
+              font-weight: 300;
+              color: #cecece;
+              letter-spacing: -0.3px;
+            }
+          }
+        }
+        .show-all-comments-button {
+          width: 100%;
+          height: 70px;
+          margin-bottom: 0.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .show-more-comments {
+            width: 150px;
+            height: 28px;
+            border: none;
+            outline: none;
+            color: mediumslateblue;
+            background-color: transparent;
+            border-left: 2px solid mediumpurple;
+            cursor: pointer;
+          }
+          .show-more-comments:hover {
+            background-color: #242A38;
+            border-radius: 4px;
+          }
+          .show-more-comments:active {transform: translateY(1px);}
+
+          .support {
+            color: rgb(192, 80, 80);
+            font-size: 1.5rem;
+            cursor: pointer;
+          }
+          .support:hover {
+            background-color: #242A38;
+            border-radius: 10px;
+          }
+        }
+
+
+
+
+      }
+    }
+
+
+  }
+}
+
+//main container
+ 

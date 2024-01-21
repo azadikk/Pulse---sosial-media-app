@@ -1,0 +1,83 @@
+@import '../../globalstyle.scss';
+
+
+
+.fontsize-modal {
+     width: 100px;
+     height: 100px;
+     background-color: #cecece;
+     border-radius: 10px;
+     overflow: auto;
+     flex-direction: column;
+     @include animModal();
+     .fontsizes {
+       @include flex;
+       flex-direction: column;
+       width: 100%;
+       .title {
+          cursor: pointer;
+         user-select: none;
+         color: #303030;
+         font-size: 12.5px;
+         padding: 0.2rem;
+         background-color: #cecece;
+         width: 86%;
+         border-radius: 4px;
+       }
+       .title:hover {
+         background-color: mediumslateblue;
+       }
+     }
+}
+   
+
+
+.fontweight-modal {
+     width: 100px;
+     height: 110px;
+     background-color: #cecece;
+     border-radius: 10px;
+     overflow: auto;
+     @include flex;
+     flex-direction: column;
+     @include animModal();
+     .fontweights {
+       @include flex;
+       flex-direction: column;
+       width: 100%;
+       .title {
+          cursor: pointer;
+         user-select: none;
+         color: #303030;
+         font-size: 12.5px;
+         padding: 0.2rem;
+         background-color: #cecece;
+         width: 86%;
+         border-radius: 4px;
+       }
+       .title:hover {
+         background-color: mediumslateblue;
+       }
+     }
+}
+   
+
+.change-color-modal {
+  @include animModal();
+  width: 100px;
+  height: 90px;
+  background-color: white;
+  border-radius: 6px;
+  @include flex;
+  input[type='color'] {
+    width: 96%;
+    height: 96%;
+    border: 1px solid black;
+  }
+  input[type='color']:focus {
+    background-color: mediumslateblue;
+    border: 3px dashed rgb(48, 48, 48);
+  }
+}
+
+
